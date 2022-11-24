@@ -1,7 +1,8 @@
 package com.bartrip.main.entity.User;
 
+import java.io.Serializable;
 
-public class AuthenticationRequestDTO {
+public class AuthenticationRequestDTO implements Serializable {
     private String email;
     private char[] password;
     

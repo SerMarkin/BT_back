@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 import com.bartrip.main.entity.BaseModel.BaseModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "users")
@@ -18,6 +19,7 @@ public class User extends BaseModel {
     @Column(name = "email", unique = true)
     private String email;
 
+    @JsonIgnore
     @Column(name = "password")
     private char[] password;
 
