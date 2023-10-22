@@ -48,6 +48,7 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/secure").hasAnyAuthority(Permission.DEVELOPERS_READ.getPermission())
+                .antMatchers("/secure_admin").hasAnyAuthority(Permission.DEVELOPERS_WRITE.getPermission())
                 .antMatchers("/").permitAll()
                 .antMatchers("/auth/login").permitAll()
                 .antMatchers("/auth/register").permitAll()

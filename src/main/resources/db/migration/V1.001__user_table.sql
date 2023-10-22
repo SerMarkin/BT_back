@@ -1,4 +1,6 @@
 create schema if not exists bartrip;
+GRANT USAGE ON SCHEMA bartrip TO bartrip_user;
+
 
 drop table if exists bartrip.users;
 CREATE TABLE bartrip.users
@@ -15,3 +17,6 @@ CREATE TABLE bartrip.users
     updated_by character varying(255) NOT NULL,
     CONSTRAINT users_unique UNIQUE(email)
 );
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA bartrip TO bartrip_user;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA bartrip TO bartrip_user;
